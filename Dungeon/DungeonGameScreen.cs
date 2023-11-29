@@ -170,7 +170,10 @@ namespace Dungeon
 
         string GetDisplaySymboleFor(object item)
         {
-
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
             if (item.GetType() == typeof(Enemy))
             {
                 return $"{((Enemy)item).Symbole}";
